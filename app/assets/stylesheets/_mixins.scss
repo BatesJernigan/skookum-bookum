@@ -1,0 +1,21 @@
+@mixin filter-link {
+  padding: 5px 8px;
+  text-decoration: none;
+}
+
+@mixin lg-phone {
+  @media screen and (min-width: $lg-phone-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}

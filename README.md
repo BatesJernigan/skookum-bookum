@@ -1,24 +1,9 @@
-# README
+# Run Instructions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To Run the project, simply run `rails server` on any port and go to the root url `/`
 
-Things you may want to cover:
+# Personal Notes
 
-* Ruby version
+The filters will only show available books based on other search parameters. The filters will search across pages.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This could have been done using JS but I thought that the code in ruby looked very nice since this app lends itself to utilizing meta_programming.

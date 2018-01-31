@@ -1,6 +1,4 @@
-- @books.each do |book|
-  %p
-    = "Title: #{book['title']}"
-    = "Author: #{book['author']}"
-    = "Year: #{book['year']}"
-    = "ISBN: #{book['isbn']}"
+.book-list
+  - @paginated_books.each do |book|
+    = render 'item', book: book
+  = will_paginate @paginated_books

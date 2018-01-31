@@ -1,3 +1,94 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1.logo {
+  font-family: $logo-font-family;
+  font-size: 60px;
+  margin: 0;
+  text-align: center;
+}
+.book-list {
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.book-list-item {
+  font-family: $general-font-family;
+  width: 100%;
+  border: 2px solid $primary-color;
+  margin: 3px;
+  padding: 3px;
+  min-width: 260px;
+  @include lg-phone {
+    width: 45%;
+  }
+  @include tablet {
+    width: 30%;
+  }
+  @include desktop {
+    width: 22%;
+  }
+}
+nav {
+  margin: 0 3px;
+  .nav-item {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  a {
+    @include filter-link;
+  }
+  &:hover {
+    .dropdown-content {
+      display: block;
+    }
+  }
+}
+.dropdown-btn {
+  padding: 2px;
+  background-color: $primary-color;
+  color: #fff;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+  max-height: 400px;
+  overflow: scroll;
+
+  a {
+    @include filter-link;
+    display: block;
+    background-color: #fff;
+    color: $darker-primary-color;
+    &:hover {
+      background-color: $darker-primary-color;
+      color: #fff;
+    }
+  }
+}
+.dropdown-selected {
+  @include filter-link;
+  color: red;
+  border: 1px solid red;
+  &:hover {
+    color: #fff;
+    background-color: red;
+  }
+}

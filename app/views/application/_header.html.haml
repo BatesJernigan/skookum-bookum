@@ -1,0 +1,13 @@
+%h1.logo Skookum Bookum
+%nav
+  .nav-item Filters
+  - %w[author title year isbn].each do |book_param|
+    - if params[:q] && params[:q][book_param]
+      = link_to "X | #{params[:q][book_param]}", books_path(q: search_params.except(book_param)), class: 'dropdown-selected nav-item'
+    - else
+      .nav-item.dropdown
+        = link_to book_param.titleize, '#', class: 'dropdown-btn'
+        .dropdown-content
+          - send("all_book_#{book_param.pluralize}").each do |b|
+            - book_path_params = params[:q] ? search_params : {}
+            = link_to b, books_path(q: book_path_params.merge(book_param => b))
